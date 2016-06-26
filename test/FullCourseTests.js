@@ -10,7 +10,7 @@ var scriptToTest = require('../FullCourseCode.js');
 //var scriptToTest = require('../FullCourseCode-Master.js');
 var methodExportTest = scriptToTest.ReturnArrayFromCsvString;
 var fizzBuzzMain = scriptToTest.FizzBuzzMain;
-var boolCheckForEvenlyDivisibleInteger = scriptToTest.BoolCheckForEvenlyDivisibleInteger;
+var isEvenlyDivisibleInteger = scriptToTest.BoolCheckForEvenlyDivisibleInteger;
 var returnStringFizzBuzz = scriptToTest.ReturnStringFizzBuzz;
 
 describe('Method Export Test', function(){
@@ -22,21 +22,22 @@ describe('Method Export Test', function(){
     })
 })
 
-describe('Step 1: FizzBuzz Full Run', function(){
+/*describe('Step 1: FizzBuzz Full Run', function(){
     it('should run to completion with no input params supplied', function(){
         assert.doesNotThrow(fizzBuzzMain);
     })
 
     it('should run to completion without exception with expanded input params', function(){
         //Arrange, Act, Assert;
-        assert.doesNotThrow(function() {fizzBuzzMain(50)});
+        assert.doesNotThrow(function() {fizzBuzzMain(15)});
     })
 
     it('should return undefined when executed successfully', function(){
         var iterations = 50;
         var response = fizzBuzzMain(iterations);
 
-        assert.isUndefined(response)
+        assert.isString(response)
+        //assert.isUndefined(response)
     })
 
     it('should throw exception with invalid input parameter types -- object', function(){
@@ -193,5 +194,86 @@ describe('Step 1: FizzBuzz Full Run', function(){
 //        //Assert
 //        assert.isUndefined(result);
 //    })
-//})
+//})*/
 
+//If divisible by 3 print fizz
+//If divisible by 5 print buzz
+//If divisible by 3 & 5 print fizzBuzz
+//If not divisible by 3 & 5 print the number
+
+
+
+describe("When Calling FizzBuzz main it", function(){
+    it("Should run to completion without error", function(){
+        //Assert
+        //assert.doesNotThrow(fizzBuzzMain);
+        assert.doesNotThrow(function(){
+            fizzBuzzMain(7);
+        })
+    })
+
+    it("Should throw error when passing invalid input parameter", function(){
+        assert.throw(function(){
+            fizzBuzzMain("string");
+        })
+    })
+
+    it("Should return fizzBuzz when passing 15 as value to test", function(){
+        //Arrange
+        var ValueToTest = 15;
+        //Act
+        var result = fizzBuzzMain(ValueToTest);
+        //Assert
+        assert(result === "FizzBuzz");
+    })
+
+    it("Should return fizz when evenly divisible by 3", function(){
+        //Arrange
+        var ValueToTest = 3;
+        //Act
+        var result = fizzBuzzMain(ValueToTest);
+        //Assert
+        assert(result === "Fizz");
+    })
+
+    it("Should return Buzz when evenly divisible by 5", function(){
+        //Arrange
+        var ValueToTest = 5;
+        //Act
+        var result = fizzBuzzMain(ValueToTest);
+        //Assert
+        assert(result === "Buzz");
+    })
+
+    it("Should return the number if not evenly divisible by 3 or 5", function(){
+        //Arrange
+        var ValueToTest = 7;
+        //Act
+        var result = fizzBuzzMain(ValueToTest);
+        //Assert
+        assert(result === 7);
+    })
+})
+
+
+    describe("When calling isEvenlyDivisibleInteger", function(){
+        it("When passing 20 that is evenly divisible by 10 returns true", function(){
+            //Arrange
+            var ValueToTestDivisor = 10; 
+            var ValueToTestDividend = 20;
+            //Act
+            var result = isEvenlyDivisibleInteger(ValueToTestDividend, ValueToTestDivisor);
+            //Assert
+            assert(result == true);
+        })
+        
+        it("Should return false when passing the number 7 not evenly divisible by 8", function(){
+          //Arrange 
+            var ValueToTestDivisor = 7;
+            var ValueToTestDividend = 8;
+          //Act
+            var result = isEvenlyDivisibleInteger(ValueToTestDividend, ValueToTestDivisor);
+          //Assert
+            assert(result == false);
+        })
+    })
