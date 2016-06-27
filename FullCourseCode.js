@@ -4,15 +4,16 @@
 
 // FullCourseCode.js
 
-var returnArrayFromCsvString = function(string){
-    return string.split(",")
-}
 
 //If a number is evenly divisible by 3 return Fizz
 //If a number is evenly divisible by 5 return Buzz
 //If a number is evenly divisible by both return FizzBuzz
 //If a number is NOT evenly divisible by both the parameter
-
+var consoleRunner = function() {
+ for(var i = 0; i<100; i++){
+     console.log(fizzBuzzMain(i));
+ }
+}
 
 var fizzBuzzMain = function(ValueToTest) {
     //15
@@ -61,9 +62,9 @@ var fizzBuzzMain = function(ValueToTest) {
     }
 }*/
 
-var returnStringFizzBuzz = function(intUnderTest){
 
-}
+
+
 
 var isEvenlyDivisibleInteger = function(dividend, divisor){
 
@@ -72,10 +73,4 @@ var isEvenlyDivisibleInteger = function(dividend, divisor){
 
 }
 
-module.exports = {
-    ReturnArrayFromCsvString : returnArrayFromCsvString,
-    FizzBuzzMain : fizzBuzzMain,
-    BoolCheckForEvenlyDivisibleInteger : isEvenlyDivisibleInteger,
-    ReturnStringFizzBuzz : returnStringFizzBuzz
-}
-
+//module.exports = fizzBuzzMain;
