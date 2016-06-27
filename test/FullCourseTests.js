@@ -212,11 +212,7 @@ describe("When Calling FizzBuzz main it", function(){
         })
     })
 
-    it("Should throw error when passing invalid input parameter", function(){
-        assert.throw(function(){
-            fizzBuzzMain("string");
-        })
-    })
+   
 
     it("Should return fizzBuzz when passing 15 as value to test", function(){
         //Arrange

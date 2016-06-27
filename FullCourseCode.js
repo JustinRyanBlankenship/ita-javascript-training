@@ -18,11 +18,6 @@ var fizzBuzzMain = function(ValueToTest) {
     //15
     var fizz = 3;
     var buzz = 5;
-    try {
-        if(typeof ValueToTest !== "number"){
-            throw new Error ("Invalid input parameters");
-        }
-
         var isBuzz = isEvenlyDivisibleInteger(ValueToTest, buzz );
         var isFizz = isEvenlyDivisibleInteger(ValueToTest, fizz );
 
@@ -37,11 +32,6 @@ var fizzBuzzMain = function(ValueToTest) {
         }
 
         return ValueToTest;
-
-    }
-    catch(ex){
-     throw ex;
-    }
 }
 
 
