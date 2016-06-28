@@ -9,18 +9,18 @@
 //If a number is evenly divisible by 5 return Buzz
 //If a number is evenly divisible by both return FizzBuzz
 //If a number is NOT evenly divisible by both the parameter
-var consoleRunner = function() {
+var consoleRunner = function() {     //This is the for loop to see the code in the console from the html doc
  for(var i = 0; i<100; i++){
      console.log(fizzBuzzMain(i));
  }
 }
 
-var fizzBuzzMain = function(ValueToTest) {
+var fizzBuzzMain = function(number) {
     //15
     var fizz = 3;
     var buzz = 5;
-        var isBuzz = isEvenlyDivisibleInteger(ValueToTest, buzz );
-        var isFizz = isEvenlyDivisibleInteger(ValueToTest, fizz );
+        var isBuzz = isEvenlyDivisibleInteger(number, buzz );
+        var isFizz = isEvenlyDivisibleInteger(number, fizz );
 
         if(isBuzz && isFizz){
             return "FizzBuzz";
@@ -32,7 +32,7 @@ var fizzBuzzMain = function(ValueToTest) {
             return "Buzz";
         }
 
-        return ValueToTest;
+        return number;
 }
 
 
